@@ -29,4 +29,15 @@ public class BusStop{
     return queueCount() == queue.length;
   }
 
+  public void getOnBus(Bus bus){
+    int index = 0;
+    for (Person person : queue){
+      if (person != null){
+        bus.pickUpPassenger(person);
+        queue[index] = null;
+        index++;
+      }
+    }
+  }
+
 }
