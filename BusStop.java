@@ -16,4 +16,9 @@ public class BusStop{
     return count;
   }
 
+  public void joinQueue(Person person){
+    int index = queueCount();
+    queue[index] = person;
+  }
+
 }

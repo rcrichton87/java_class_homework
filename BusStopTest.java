@@ -19,4 +19,10 @@ public class BusStopTest{
     assertEquals(0, busStop.queueCount() );
   }
 
+  @Test
+  public void canJoinQueue(){
+    busStop.joinQueue(person);
+    assertEquals(1, busStop.queueCount() );
+  }
+
 }
