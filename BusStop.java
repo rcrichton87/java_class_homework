@@ -33,6 +33,9 @@ public class BusStop{
     int index = 0;
     for (Person person : queue){
       if (person != null){
+        if (bus.isFull() ){
+          return;
+        }
         bus.pickUpPassenger(person);
         queue[index] = null;
         index++;

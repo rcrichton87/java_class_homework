@@ -51,4 +51,14 @@ public class BusStopTest{
     assertEquals(5, bus.passengerCount() );
   }
 
+  @Test
+  public void goFromQueueToBusQueueLargerThanPassengers(){
+    for (int i = 0; i < 20; i++){
+      busStop.joinQueue(person);
+    }
+    busStop.getOnBus(bus);
+    assertEquals(5, busStop.queueCount() );
+    assertEquals(10, bus.passengerCount() );
+  }
+
 }
