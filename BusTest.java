@@ -32,4 +32,12 @@ public void isBusFull(){
   assertEquals(true, bus.isFull() );
 }
 
+@Test
+public void cannotPickupWhenFull(){
+    for (int i = 0; i < 15; i++){
+      bus.pickUpPassenger(person);
+    }
+
+    assertEquals(10, bus.passengerCount() );
+  }
 }
