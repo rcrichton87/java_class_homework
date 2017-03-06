@@ -23,4 +23,8 @@ public class Bus{
     passengers[index] = person;
   }
 
+  public boolean isFull(){
+    return passengerCount() == passengers.length;
+  }
+
 }

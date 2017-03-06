@@ -23,4 +23,13 @@ public void canPickUpPassenger(){
   assertEquals(1, bus.passengerCount() );
 }
 
+@Test
+public void isBusFull(){
+  for (int i = 0; i < 10; i++){
+    bus.pickUpPassenger(person);
+  }
+
+  assertEquals(true, bus.isFull() );
+}
+
 }
