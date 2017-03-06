@@ -30,4 +30,10 @@ public class Bus{
     return passengerCount() == passengers.length;
   }
 
+  public void dropOffPassengers(){
+    for (int i = 0; i < passengers.length; i++){
+      passengers[i] = null;
+    }
+  }
+
 }

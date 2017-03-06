@@ -3,41 +3,49 @@ import org.junit.*;
 
 public class BusTest{
 
-Bus bus;
-Person person;
+  Bus bus;
+  Person person;
 
-@Before
-public void before(){
-  bus = new Bus();
-  person = new Person();
-}
-
-@Test
-public void passengersStartsEmpty(){
-  assertEquals(0, bus.passengerCount() );
-}
-
-@Test
-public void canPickUpPassenger(){
-  bus.pickUpPassenger(person);
-  assertEquals(1, bus.passengerCount() );
-}
-
-@Test
-public void isBusFull(){
-  for (int i = 0; i < 10; i++){
-    bus.pickUpPassenger(person);
+  @Before
+  public void before(){
+    bus = new Bus();
+    person = new Person();
   }
 
-  assertEquals(true, bus.isFull() );
-}
+  @Test
+  public void passengersStartsEmpty(){
+    assertEquals(0, bus.passengerCount() );
+  }
 
-@Test
-public void cannotPickupWhenFull(){
+  @Test
+  public void canPickUpPassenger(){
+    bus.pickUpPassenger(person);
+    assertEquals(1, bus.passengerCount() );
+  }
+
+  @Test
+  public void isBusFull(){
+    for (int i = 0; i < 10; i++){
+      bus.pickUpPassenger(person);
+    }
+
+    assertEquals(true, bus.isFull() );
+  }
+
+  @Test
+  public void cannotPickupWhenFull(){
     for (int i = 0; i < 15; i++){
       bus.pickUpPassenger(person);
     }
 
     assertEquals(10, bus.passengerCount() );
   }
+
+  @Test
+  public void canDropOffPassengers(){
+    bus.pickUpPassenger(person);
+    bus.dropOffPassengers();
+    assertEquals(0, bus.passengerCount() );
+  }
+
 }
