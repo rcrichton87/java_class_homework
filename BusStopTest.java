@@ -33,12 +33,12 @@ public class BusStopTest{
     assertEquals(true, busStop.isFull() );
   }
 
-  // @Test
-  // public void cannotJoinWhenQueueFull(){
-  //   for (int i = 0; i < 20; i++){
-  //     busStop.joinQueue(person);
-  //   }
-  //   assertEquals(15, busStop.queueCount() );
-  // }
+  @Test
+  public void cannotJoinWhenQueueFull(){
+    for (int i = 0; i < 20; i++){
+      busStop.joinQueue(person);
+    }
+    assertEquals(15, busStop.queueCount() );
+  }
 
 }

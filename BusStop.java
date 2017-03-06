@@ -17,6 +17,10 @@ public class BusStop{
   }
 
   public void joinQueue(Person person){
+    if (isFull() ){
+      return;
+    }
+
     int index = queueCount();
     queue[index] = person;
   }
