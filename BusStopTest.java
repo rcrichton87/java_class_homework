@@ -25,4 +25,20 @@ public class BusStopTest{
     assertEquals(1, busStop.queueCount() );
   }
 
+  @Test
+  public void isQueueFull(){
+    for (int i = 0; i < 15; i++){
+      busStop.joinQueue(person);
+    }
+    assertEquals(true, busStop.isFull() );
+  }
+
+  // @Test
+  // public void cannotJoinWhenQueueFull(){
+  //   for (int i = 0; i < 20; i++){
+  //     busStop.joinQueue(person);
+  //   }
+  //   assertEquals(15, busStop.queueCount() );
+  // }
+
 }

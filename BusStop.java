@@ -21,4 +21,8 @@ public class BusStop{
     queue[index] = person;
   }
 
+  public boolean isFull(){
+    return queueCount() == queue.length;
+  }
+
 }
