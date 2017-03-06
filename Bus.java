@@ -36,4 +36,9 @@ public class Bus{
     }
   }
 
+  public void dropOffPassenger(){
+    int occupiedIndex = passengerCount() - 1;
+    passengers[occupiedIndex] = null;
+  }
+
 }
